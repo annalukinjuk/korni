@@ -1,15 +1,21 @@
 import numpy as np
+from math import*
+import matplotlib.pyplot as plt
 from tkinter import *
+global D,t
+D=-1
+t="no solutions"
 def lahenda():
     global a,b,c
     if(a.get()!="" and b.get()!="" and c.get()!=""):
-        a_=float(a.get())
-        b_=float(b.get())
-        c_=float(c.get())
-        D=b_*b_-4*a_*c_
+        if type(a) and type(b) and type(c)!=str:
+            a_=float(a.get())
+            b_=float(b.get())
+            c_=float(c.get())
+            D=b_*b_-4*a_*c_
         if D>0:
             x1_=round((-1*b_+sqrt(D))/(2*a_),2)
-            x1_=round((-1*b_-sqrt(D))/(2*a_),2)
+            x2_=round((-1*b_-sqrt(D))/(2*a_),2)
             t=f"X1={x1_}, \nX2={x2_}"
             graf=True
         elif D==0:
@@ -20,9 +26,12 @@ def lahenda():
             t="No square roots detected"
             graf=False
         vastus.configure(text=f"D={D}\n{t}")
-        a.configure(bg="lightblue")
-        b.configure(bg="lightblue")
-        c.configure(bg="lightblue")
+        a.configure(bg="pink")
+        b.configure(bg="pink")
+        c.configure(bg="pink")
+    elif (a.get()==0 and b.get()==0 and c.get()==0):
+            vastus.configure(text=f"cannot be zero")
+            a.configure(bg="red")
     else:
         if a.get()=="":
             a.configure(bg="red")
@@ -30,7 +39,28 @@ def lahenda():
             b.configure(bg="red")
         if c.get()=="":
             c.configure(bg="red")
-
+    return graf, D, t
+def graafik():
+    graf,D,t=lahenda()
+    if graf==True:
+        a_=float(a.get())
+        b_=float(b.get())
+        c_=float(c.get())
+        x0=(-b_)/(2*a_)
+        y0=a_*x0*x0+b_*x0+c_
+        x=np.arrange(x0-10,x0+10,0.5)#min max step
+        y=a_*x*x+b_*x+c_
+        fig=plt.figure()
+        plt.plot(x,y,'b:o',x0,y0,'r-d')
+        plt.title('square equation')
+        plt.ylabel('y')
+        plt.xlabel('x')
+        plt.grid(True)
+        plt.show()
+        text=f"apex of a parabola({x0},{y0})"
+    else:
+        text=f"the option is not avalible \n with these variables"
+    vastus.configure(text=f"D={D}\n{t}\n{text}")
 
 aken=Tk()
 aken.title("Square equations")
