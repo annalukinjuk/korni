@@ -78,25 +78,54 @@ def veel():
         t=0
 def kala():
     x1=np.arange(0,9.5,0.5)#min max step
-    y1=(2/27)*x1*x1-3
+    y1=(2/27)*x1*x1-3 #dark blue line
     x2=np.arange(-10,0.5,0.5)#min max step
-    y2=0.04*x2*x2-3
-    x3=np.arange(-9,-3,0.5)#min max step
-    y3=(2/9)*(x3+6)**2+1
-    x4=np.arange(-3,10,0.5)#min max step
-    y4=(-1/12)*(x4-3)**2+6
+    y2=0.04*x2*x2-3 #orange line
+    x3=np.arange(-9,-2.5,0.5)#min max step
+    y3=(2/9)*(x3+6)**2+1#green line
+    x4=np.arange(-3,9.5,0.5)#min max step
+    y4=(-1/12)*(x4-3)**2+6 #red line
     x5=np.arange(5,9,0.5)#min max step
-    y5=(1/9)*(x5-5)**2+2
-    x6=np.arange(5,9,0.5)#min max step
-    y6=(1/8)*(x6-7)*2+1.5
+    y5=(1/9)*(x5-5)**2+2#purple line
+    x6=np.arange(5,8.3,0.5)#min max step
+    y6=(1/8)*(x6-7)**2+1.5#brown line
     x7=np.arange(-13,-8.5,0.5)#min max step
     y7=(-0.75)*(x7+11)**2+6
     x8=np.arange(-15,-12.5,0.5)#min max step
     y8=(-0.5)*(x8+13)**2+3
-    x9=np.arange(-15,-10,0.5)#min max step
+    x9=np.arange(-15,-9.5,0.5)#min max step
     y9=[1]*len(x9)
     x10=np.arange(3,4,0.5)#min max step
-    y10=[3]*len(x10)
+    y10=[3]*len(x10) #eye blue line
+    fig=plt.figure()
+    plt.plot(x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7,x8,y8,x9,y9,x10,y10)
+    plt.title('square equation')
+    plt.ylabel('y')
+    plt.xlabel('x')
+    plt.grid(True)
+    plt.show()
+
+def glasses():
+    x1=np.arange(0,9.5,0.5)#min max step
+    y1=(2/27)*x1*x1-3 #dark blue line
+    x2=np.arange(-10,0.5,0.5)#min max step
+    y2=0.04*x2*x2-3 #orange line
+    x3=np.arange(-9,-2.5,0.5)#min max step
+    y3=(2/9)*(x3+6)**2+1#green line
+    x4=np.arange(-3,9.5,0.5)#min max step
+    y4=(-1/12)*(x4-3)**2+6 #red line
+    x5=np.arange(5,9,0.5)#min max step
+    y5=(1/9)*(x5-5)**2+2#purple line
+    x6=np.arange(5,8.3,0.5)#min max step
+    y6=(1/8)*(x6-7)**2+1.5#brown line
+    x7=np.arange(-13,-8.5,0.5)#min max step
+    y7=(-0.75)*(x7+11)**2+6
+    x8=np.arange(-15,-12.5,0.5)#min max step
+    y8=(-0.5)*(x8+13)**2+3
+    x9=np.arange(-15,-9.5,0.5)#min max step
+    y9=[1]*len(x9)
+    x10=np.arange(3,4,0.5)#min max step
+    y10=[3]*len(x10) #eye blue line
     fig=plt.figure()
     plt.plot(x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7,x8,y8,x9,y9,x10,y10)
     plt.title('square equation')
