@@ -120,10 +120,30 @@ def glasses():
     y6=-(x6-7)**2+5#
     x7=np.arange(-1,1.2,0.5)#min max step
     y7=(-0.5*x7)**2+0.7#pink line
-    
     fig=plt.figure()
     plt.plot(x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7)
     plt.title('square equation')
+    plt.ylabel('y')
+    plt.xlabel('x')
+    plt.grid(True)
+    plt.show()
+
+def umbrella():
+    x1=np.arange(-12, 12, 0.5)
+    y1=(-1/18)*x1**2+12
+    x2=np.arange(-4, 4, 0.5)
+    y2=(-1/8)*x2**2+6
+    x3=np.arange(-12, 4, 0.5)
+    y3=(-1/8)*(x3+8)**2+6
+    x4=np.arange(4, 12, 0.5)
+    y4=(-1/8)*(x4-8)**2+6
+    x5=np.arange(-4, -0.3, 0.5)
+    y5=2*(x5+3)**2-9
+    x6=np.arange(-4, 0.2, 0.5)
+    y6=1,5*(x6+3)**2-10
+    fig=plt.figure()
+    plt.plot(x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6)
+    plt.title('umbrella')
     plt.ylabel('y')
     plt.xlabel('x')
     plt.grid(True)
@@ -163,12 +183,13 @@ btn_veel.pack(side=TOP)
 var=IntVar()
 r1=Radiobutton(f2,text="kala",variable=var, var=1, font="Calibri 26",command=kala )
 r2=Radiobutton(f2,text="glasses",variable=var, var=2, font="Calibri 26", command=glasses)
+r3=Radiobutton(f2,text="umbrella",variable=var, var=3, font="Calibri 26", command=umbrella)
 #r3=Radiobutton(f2,text="lyagukha",variable=var, var=3, font="Calibri 26",command=lyagukha)
 #r4=Radiobutton(f2,text="heart",variable=var, var=4, font="Calibri 26",command=heart)
 #r5=Radiobutton(f2,text="star",variable=var, var=5, font="Calibri 26" )
 r1.pack()
 r2.pack()
-#r3.pack()
+r3.pack()
 #r4.pack()
 #r5.pack()
 # grid(), place()
